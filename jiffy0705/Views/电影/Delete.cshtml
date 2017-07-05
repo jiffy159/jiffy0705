@@ -1,0 +1,41 @@
+@model jiffy0705.Models.电影
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>电影</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <input type="hidden" asp-for="Id" />
+        <dt>
+            @Html.DisplayNameFor(model => model.名字)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.名字)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.分类)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.分类)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.发布时间)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.发布时间)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </form>
+</div>

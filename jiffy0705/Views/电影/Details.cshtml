@@ -1,0 +1,36 @@
+@model jiffy0705.Models.电影
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>电影</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.名字)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.名字)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.分类)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.分类)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.发布时间)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.发布时间)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

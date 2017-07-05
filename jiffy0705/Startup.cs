@@ -47,6 +47,15 @@ namespace jiffy0705
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
+            services.AddAuthorization(options =>
+            {
+
+                options.AddPolicy("Jiffy是管理员", policy => policy.RequireClaim("管理员"));
+
+                // I could add more policies here.
+
+            });
+
             services.AddMvc();
 
             // Add application services.
