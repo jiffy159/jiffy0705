@@ -9,7 +9,7 @@
 <p class="text-success">@ViewData["StatusMessage"]</p>
 @if (Model.CurrentLogins.Count > 0)
 {
-    <h4>Registered Logins</h4>
+    <h4>注册登录</h4>
     <table class="table">
         <tbody>
             @for (var index = 0; index < Model.CurrentLogins.Count; index++)
@@ -39,7 +39,7 @@
 }
 @if (Model.OtherLogins.Count > 0)
 {
-    <h4>Add another service to log in.</h4>
+    <h4>添加其他服务以登录.</h4>
     <hr />
     <form asp-controller="Manage" asp-action="LinkLogin" method="post" class="form-horizontal">
         <div id="socialLoginList">

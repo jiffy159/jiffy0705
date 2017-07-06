@@ -1,14 +1,12 @@
 ﻿@model IEnumerable<jiffy0705.Models.电影>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "主页";
 }
 
-<h2>Index</h2>
+<h2>主题</h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+
 <table class="table">
     <thead>
         <tr>
@@ -37,11 +35,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.发布时间)
                 </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
+               
             </tr>
         }
     </tbody>
