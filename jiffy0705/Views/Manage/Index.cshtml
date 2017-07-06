@@ -1,37 +1,36 @@
 ﻿@model IndexViewModel
 @{
-    ViewData["Title"] = "Manage your account";
+    ViewData["Title"] = "管理您的帐户";
 }
 
 <h2>@ViewData["Title"].</h2>
 <p class="text-success">@ViewData["StatusMessage"]</p>
 
 <div>
-    <h4>Change your account settings</h4>
+    <h4>更改帐户设置</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>Password:</dt>
+        <dt>密码:</dt>
         <dd>
             @if (Model.HasPassword)
             {
-                <a asp-controller="Manage" asp-action="ChangePassword" class="btn-bracketed">Change</a>
+                <a asp-controller="Manage" asp-action="ChangePassword" class="btn-bracketed">更改</a>
             }
             else
             {
-                <a asp-controller="Manage" asp-action="SetPassword" class="btn-bracketed">Create</a>
+                <a asp-controller="Manage" asp-action="SetPassword" class="btn-bracketed">创建</a>
             }
         </dd>
-        <dt>External Logins:</dt>
+        <dt>外部登录:</dt>
         <dd>
 
-            @Model.Logins.Count <a asp-controller="Manage" asp-action="ManageLogins" class="btn-bracketed">Manage</a>
+            @Model.Logins.Count <a asp-controller="Manage" asp-action="ManageLogins" class="btn-bracketed">管理</a>
         </dd>
-        <dt>Phone Number:</dt>
+        <dt>电话号码:</dt>
         <dd>
-            <p>
-                Phone Numbers can be used as a second factor of verification in two-factor authentication.
-                See <a href="https://go.microsoft.com/fwlink/?LinkID=532713">this article</a>
-                for details on setting up this ASP.NET application to support two-factor authentication using SMS.
+            <p>                在双因素身份验证中, 电话号码可以用作验证的第二个因素。
+                请参见 <a href="https://go.microsoft.com/fwlink/？LinkID=532713"> 本文 </a>
+                有关设置此 ASP.NET 应用程序以支持使用 sms 进行双因素身份验证的详细信息。
             </p>
             @*@(Model.PhoneNumber ?? "None")
                 @if (Model.PhoneNumber != null)
@@ -48,11 +47,10 @@
                 }*@
         </dd>
 
-        <dt>Two-Factor Authentication:</dt>
+        <dt>双因素身份验证:</dt>
         <dd>
-            <p>
-                There are no two-factor authentication providers configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532713">this article</a>
-                for setting up this application to support two-factor authentication.
+            <p>                没有配置双因素身份验证提供程序。请参见 <a href="https://go.microsoft.com/fwlink/？LinkID=532713"> 本文 </a>
+                用于设置此应用程序以支持双因素身份验证。
             </p>
             @*@if (Model.TwoFactor)
                 {
